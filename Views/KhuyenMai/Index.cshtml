@@ -1,0 +1,82 @@
+@model IEnumerable<btl.Models.KhuyenMai>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+    @if (btl.Globals.is_Customer == false)
+    {
+        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+            class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+    }
+</div>
+@if (btl.Globals.is_Customer == false)
+{
+    <p>
+        <a asp-action="Create" class="btn btn-info btn-icon-split">
+            <span class="icon text-white-50">
+                <i class="fas fa-plus-circle"></i>
+            </span>
+            <span class="text">Create New</span>
+        </a>
+    </p>
+}
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Thông tin</h6>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ma_khuyen_mai)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.dieu_kien_tich_luy)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.muc_khuyen_mai)
+                        </th>
+                        @if (btl.Globals.is_Customer == false)
+                        {
+                            <th>
+                                Thao Tác
+                            </th>
+                        }
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        string muc_khuyen_mai = (item.muc_khuyen_mai * 100) + "%";
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ma_khuyen_mai)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.dieu_kien_tich_luy) <span> vnđ</span>
+                            </td>
+                            <td>
+                                @muc_khuyen_mai
+                            </td>
+                            @if (btl.Globals.is_Customer == false)
+                            {
+                                <td style="display: flex; justify-content: space-evenly">
+                                    <a asp-action="Edit" asp-route-id="@item.ma_khuyen_mai" class="btn btn-info btn-circle">
+                                        <i class="fas fa-info-circle"></i>
+                                    </a>
+                                    <form method="post" asp-action="Delete" asp-route-id="@item.ma_khuyen_mai">
+                                        <input type="submit" value="X" class="btn btn-danger btn-circle" />
+                                    </form>
+                                </td>
+                            }
+                        </tr>
+                    }
+                </tbody>
+        </div>
+    </div>
+</div>

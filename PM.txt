@@ -1,0 +1,2 @@
+dotnet ef dbcontext scaffold "Server=DESKTOP-O8E4B26;Initial Catalog=CSDLPT_BTL;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -o Models
+dotnet aspnet-codegenerator controller -name KhoController -m Kho -dc QLBHContext -outDir Controllers --useDefaultLayout --referenceScriptLibraries

@@ -1,0 +1,81 @@
+@model btl.Models.NhanVien
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+<hr />
+    <div class="row justify-content-center" >
+        <div class="col-lg-9">
+            <div class="p-5">
+                <div class="text-center">
+                    <h1 class="h4 text-gray-900 mb-4">Nhan Vien</h1>
+                </div>
+                <form class="user" asp-action="Edit">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="ma_nv" />
+                    <div class="form-group">
+                        <label asp-for="ten_nv" class="control-label"></label>
+                        <input asp-for="ten_nv" class="form-control form-control-user">
+                        <span asp-validation-for="ten_nv" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="cmnd" class="control-label"></label>
+                        <input asp-for="cmnd" class="form-control form-control-user">
+                        <span asp-validation-for="cmnd" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="gioi_tinh" class="control-label"></label>
+                        <input asp-for="gioi_tinh" class="form-control form-control-user">
+                        <span asp-validation-for="gioi_tinh" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ngay_sinh" class="control-label"></label>
+                        <input asp-for="ngay_sinh" class="form-control form-control-user">
+                        <span asp-validation-for="ngay_sinh" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="dia_chi_nv" class="control-label"></label>
+                        <input asp-for="dia_chi_nv" class="form-control form-control-user">
+                        <span asp-validation-for="dia_chi_nv" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="sdt_nv" class="control-label"></label>
+                        <input asp-for="sdt_nv" class="form-control form-control-user">
+                        <span asp-validation-for="sdt_nv" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="thu_viec" class="control-label"></label>
+                        <input asp-for="thu_viec" class="form-control form-control-user">
+                        <span asp-validation-for="thu_viec" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="he_so_luong" class="control-label"></label>
+                        <input asp-for="he_so_luong" class="form-control form-control-user">
+                        <span asp-validation-for="he_so_luong" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="anh_dai_dien" class="control-label"></label>
+                        <input asp-for="anh_dai_dien" class="form-control form-control-user">
+                        <span asp-validation-for="anh_dai_dien" class="text-danger"></span>
+                    </div>
+                    <hr>
+                    <form asp-action="Edit">
+                        <div class="form-group">
+                            <input type="submit" value="Save" class="btn btn-primary btn-user btn-block" />
+                        </div>
+                    </form>
+                </form>
+                <hr>
+                <div>
+                    <a asp-action="Index">Back to List</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+@* @section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+} *@

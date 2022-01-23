@@ -1,0 +1,34 @@
+@model btl.Models.CnKv
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+<hr />
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="text-center">
+            <h1 class="h4 text-gray-900 mb-4">Chi Nhánh Khu Vực</h1>
+        </div>
+        <form class="user" asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ma_chi_nhanh" class="control-label"></label>
+                <input asp-for="ma_chi_nhanh" class="form-control form-control-user" />
+                <span asp-validation-for="ma_chi_nhanh" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ma_khu_vuc" class="control-label"></label>
+                <input asp-for="ma_khu_vuc" class="form-control form-control-user" />
+                <span asp-validation-for="ma_khu_vuc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary btn-user btn-block" />
+            </div>
+            <div>
+                <a asp-action="Index">Back to List</a>
+            </div>
+        </form>
+    </div>
+</div>

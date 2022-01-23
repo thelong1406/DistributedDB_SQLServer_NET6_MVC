@@ -1,0 +1,44 @@
+@model btl.Models.ChiTietPhuThu
+
+<div class="row justify-content-center">
+    <div class="col-lg-9">
+        <div class="p-5">
+            <div class="text-center">
+                <h1 class="h4 text-gray-900 mb-4">Thêm Chi Tiết Phụ Thu</h1>
+            </div>
+            <form class="user" asp-action="CreateCTPT" asp-controller="PhieuPhuThu">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="so_phieu_thu" class="control-label"></label>
+                    <input asp-for="so_phieu_thu" class="form-control form-control-user">
+                    <span asp-validation-for="so_phieu_thu" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ma_dich_vu" class="control-label"></label>
+                    <input asp-for="ma_dich_vu" class="form-control form-control-user">
+                    <span asp-validation-for="ma_dich_vu" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="so_luong" class="control-label"></label>
+                    <input asp-for="so_luong" class="form-control form-control-user">
+                    <span asp-validation-for="so_luong" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ma_nv" class="control-label"></label>
+                    <input asp-for="ma_nv" class="form-control form-control-user">
+                    <span asp-validation-for="ma_nv" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ma_chi_nhanh" class="control-label"></label>
+                    <input asp-for="ma_chi_nhanh" class="form-control form-control-user">
+                    <span asp-validation-for="ma_chi_nhanh" class="text-danger"></span>
+                </div>
+                <hr>
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-primary btn-user btn-block" />
+                </div>
+            </form>
+            <hr>
+        </div>
+    </div>
+</div>

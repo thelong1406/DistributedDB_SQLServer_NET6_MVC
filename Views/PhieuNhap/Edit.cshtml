@@ -1,0 +1,63 @@
+@model btl.Models.PhieuNhap
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+<hr />
+<div class="row justify-content-center">
+    <div class="col-lg-9">
+        <div class="p-5">
+            <div class="text-center">
+                <h1 class="h4 text-gray-900 mb-4">Phieu Nhap</h1>
+            </div>
+            <form class="user" asp-action="Edit">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="so_phieu_nhap" class="control-label"></label>
+                    <input asp-for="so_phieu_nhap" class="form-control form-control-user">
+                    <span asp-validation-for="so_phieu_nhap" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ma_ncc" class="control-label"></label>
+                    <input asp-for="ma_ncc" class="form-control form-control-user">
+                    <span asp-validation-for="ma_ncc" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ma_nv" class="control-label"></label>
+                    <input asp-for="ma_nv" class="form-control form-control-user">
+                    <span asp-validation-for="ma_nv" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ngay_nhap" class="control-label"></label>
+                    <input asp-for="ngay_nhap" class="form-control form-control-user">
+                    <span asp-validation-for="ngay_nhap" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="tong_tien_nhap" class="control-label"></label>
+                    <input asp-for="tong_tien_nhap" class="form-control form-control-user">
+                    <span asp-validation-for="tong_tien_nhap" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ma_chi_nhanh" class="control-label"></label>
+                    <input asp-for="ma_chi_nhanh" class="form-control form-control-user">
+                    <span asp-validation-for="ma_chi_nhanh" class="text-danger"></span>
+                </div>
+                <hr>
+            </form>
+            @await Component.InvokeAsync("CTPNCreate", Model)
+            <hr>
+            @await Component.InvokeAsync("CTPNList", new {id=Model.so_phieu_nhap})
+
+        </div>
+        <div>
+            <a asp-action="Index">Back to List</a>
+        </div>
+    </div>
+</div>
+
+
+@* @section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    } *@

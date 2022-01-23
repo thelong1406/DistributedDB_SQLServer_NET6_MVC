@@ -1,0 +1,117 @@
+@model btl.Models.NhanVien
+
+
+<div class="row justify-content-center">
+
+    <!-- Earnings (Monthly) Card Example -->
+    <div class="col-xl-3 col-md-6 mb-4" >
+        <div class="card border-left-primary shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                            Ảnh Đại Diện</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800"><img src=@Model.anh_dai_dien alt=@Model.ten_nv/></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Earnings (Annual) Card Example -->
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-success shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                            Tên Nhân Viên</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">@Model.ten_nv</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tasks Card Example -->
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-info shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Chi Nhánh
+                        </div>
+                        <div class="row no-gutters align-items-center">
+                            <div class="col-auto">
+                                <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">@Model.ten_chi_nhanh</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-auto">
+                        <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pending Requests Card Example -->
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-warning shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                            Vai Trò</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">@Model.vai_tro</div>
+                    </div>
+                    <div class="col-auto">
+                        <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+
+    <div class="col-lg-6">
+
+        <!-- Basic Card Example -->
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Thông Tin Nhân Viên (@Model.ma_nv)</h6>
+            </div>
+            <div class="card-body">
+                <div><strong>Mã nhân viên</strong>: @Model.ma_nv</div>
+                <div><strong>Giới tính</strong>: @Model.gioi_tinh</div>
+                <div><strong>Ngày sinh</strong>: @Model.ngay_sinh</div>
+                <div><strong>Số điện thoại</strong>: @Model.sdt</div>
+                <div><strong>CMND</strong>: @Model.cmnd</div>
+                <div><strong>Địa chỉ</strong>: @Model.dia_chi</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-6">
+        <!-- Collapsable Card Example -->
+        <div class="card shadow mb-4">
+            <!-- Card Header - Accordion -->
+            <a href="#collapseCardExample" class="d-block card-header py-3" data-toggle="collapse"
+                role="button" aria-expanded="true" aria-controls="collapseCardExample">
+                <h6 class="m-0 font-weight-bold text-primary">Thông Tin Nghề Nghiệp</h6>
+            </a>
+            <!-- Card Content - Collapse -->
+            <div class="collapse show" id="collapseCardExample">
+                <div class="card-body">
+                    <div><strong>Thời gian làm việc</strong>: @Model.thoi_gian_lam_viec</div>
+                    <div><strong>Hệ số lương</strong>: @Model.he_so_luong</div>
+                    <div><strong>Loại nhân viên</strong>: @Model.loai_nv</div>
+                    <div><strong>Hình thức lao động</strong>: @Model.thu_viec</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

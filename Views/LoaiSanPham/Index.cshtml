@@ -1,0 +1,46 @@
+@model IEnumerable<btl.Models.LoaiSanPham>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<div id="parentDiv">
+    <table class="table table-striped tabled-bordered dt-responsive nowrap" id="resultGrid" width="100">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ma_loai)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ten_loai)
+            </th>
+            <th>
+                <button class="btn btn-primary" id="printPDF">PDF</button>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ma_loai)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ten_loai)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ma_loai">Edit</a>
+                <form method="post" asp-action="Delete" asp-route-id="@item.ma_loai" class="d-inline">
+                    <input type="submit" value="Delete" class="btn btn-danger" />
+                </form>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</div>

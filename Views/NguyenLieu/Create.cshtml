@@ -1,0 +1,40 @@
+@model btl.Models.NguyenLieu
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+<hr />
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="text-center">
+            <h1 class="h4 text-gray-900 mb-4">Nguyên Liệu</h1>
+        </div>
+        <form class="user" asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ten_nl" class="control-label"></label>
+                <input asp-for="ten_nl" class="form-control form-control-user" />
+                <span asp-validation-for="ten_nl" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="don_vi_do" class="control-label"></label>
+                <input asp-for="don_vi_do" class="form-control form-control-user" />
+                <span asp-validation-for="don_vi_do" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary btn-user btn-block" />
+            </div>
+            <div>
+                <a asp-action="Index">Back to List</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+@* @section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+} *@

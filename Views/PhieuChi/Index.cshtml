@@ -1,0 +1,88 @@
+@model IEnumerable<btl.Models.PhieuChi>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+    <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+        <i class="fas fa-download fa-sm text-white-50" onclick="window.print()"></i> Generate Report</a>
+</div>
+
+<p>
+    <a asp-action="Create" class="btn btn-info btn-icon-split">
+        <span class="icon text-white-50">
+            <i class="fas fa-plus-circle"></i>
+        </span>
+        <span class="text">Create New</span>
+    </a>
+</p>
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Thông tin</h6>
+    </div>
+    <div class="card-body" id="fromHTMLtoPDF">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.so_phieu_chi)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ten_loai_chi)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ngay_chi)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.tong_tien_chi)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ten_nv)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ten_chi_nhanh)
+                        </th>
+                        <th>
+                            Thao Tác
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.so_phieu_chi)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ten_loai_chi)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ngay_chi)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.tong_tien_chi)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ten_nv)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ten_chi_nhanh)
+                            </td>
+                            <td style="display: flex; justify-content: space-evenly">
+                                <a asp-action="Edit" asp-route-id="@item.so_phieu_chi" class="btn btn-info btn-circle">
+                                    <i class="fas fa-info-circle"></i>
+                                </a>
+                                <form method="post" asp-action="Delete" asp-route-id="@item.so_phieu_chi">
+                                    <input type="submit" value="X" class="btn btn-danger btn-circle" />
+                                </form>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+        </div>
+    </div>
+</div>

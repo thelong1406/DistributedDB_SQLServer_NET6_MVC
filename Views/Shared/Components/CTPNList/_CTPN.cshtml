@@ -1,0 +1,61 @@
+@model IEnumerable<btl.Models.ChiTietPhieuNhap>
+
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Chi tiết phiếu</h6>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ma_nl_kho)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ten_nl)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.so_luong)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.don_gia_nl)
+                        </th>
+
+                        <th>
+                            Thao Tác
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ma_nl_kho)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ten_nl)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.so_luong)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.don_gia_nl) <span> vnđ</span>
+                            </td>
+                            <td style="display: flex; justify-content: space-evenly">
+                                <a asp-action="Edit" asp-route-id="@item.so_phieu_nhap" class="btn btn-info btn-circle">
+                                    <i class="fas fa-info-circle"></i>
+                                </a>
+                                <form method="post" asp-action="DeletePN" asp-controller="PhieuNhap"
+                                asp-route-SO_PN="@item.so_phieu_nhap" asp-route-MA_NLK="@item.ma_nl_kho">
+                                    <input type="submit" value="X" class="btn btn-danger btn-circle" />
+                                </form>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+        </div>
+    </div>
+</div>

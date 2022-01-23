@@ -1,0 +1,34 @@
+@model btl.Models.ChiTietHoaDon
+
+<div class="row justify-content-center">
+    <div class="col-lg-9">
+        <div class="p-5">
+            <div class="text-center">
+                <h1 class="h4 text-gray-900 mb-4">Thêm Chi Tiết Hóa Đơn</h1>
+            </div>
+            <form class="user" asp-action="CreateCTHD" asp-controller="HoaDon">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="so_hd" class="control-label"></label>
+                    <input asp-for="so_hd" class="form-control form-control-user">
+                    <span asp-validation-for="so_hd" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ma_sp" class="control-label"></label>
+                    <input asp-for="ma_sp" class="form-control form-control-user">
+                    <span asp-validation-for="ma_sp" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="so_luong" class="control-label"></label>
+                    <input asp-for="so_luong" class="form-control form-control-user">
+                    <span asp-validation-for="so_luong" class="text-danger"></span>
+                </div>
+                <hr>
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-primary btn-user btn-block" />
+                </div>
+            </form>
+            <hr>
+        </div>
+    </div>
+</div>

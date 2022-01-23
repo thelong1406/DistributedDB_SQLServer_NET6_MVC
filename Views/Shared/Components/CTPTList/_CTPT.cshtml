@@ -1,0 +1,55 @@
+@model IEnumerable<btl.Models.ChiTietPhuThu>
+
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Chi tiết phiếu</h6>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ten_dich_vu)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.so_luong) <span> giờ</span>
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.don_gia_dv_hien_thoi) <span> vnđ</span>
+                        </th>
+                        <th>
+                            Thao Tác
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ten_dich_vu)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.so_luong)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.don_gia_dv_hien_thoi)
+                            </td>
+                            <td style="display: flex; justify-content: space-evenly">
+                                <a asp-action="Edit" asp-route-id="@item.so_phieu_thu" class="btn btn-info btn-circle">
+                                    <i class="fas fa-info-circle"></i>
+                                </a>
+                                <form method="post" asp-action="DeletePPT" asp-controller="PhieuPhuThu"
+                                asp-route-SO_PPT="@item.so_phieu_thu" asp-route-MA_DV="@item.ma_dich_vu"
+                                asp-route-MA_NV="@item.ma_nv" asp-route-MA_CN="@item.ma_chi_nhanh">
+                                    <input type="submit" value="X" class="btn btn-danger btn-circle" />
+                                </form>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+        </div>
+    </div>
+</div>

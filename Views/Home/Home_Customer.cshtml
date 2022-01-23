@@ -1,0 +1,105 @@
+@using btl.Models
+@{
+    Logined_KhachHang_Info khachHang_Info = Globals._KhachHang_Info;
+    List<ChiNhanh> chiNhanhs = Globals.chiNhanhs;
+}
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h3 class="display-6">Welcome to distributed database!</h3>
+    <h4 class="m-0 font-weight-bold text-primary">Your infomation:</h4>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" width="100%" cellspacing="0">
+                <tr style="font-size: 1.3rem;">
+                    <td>
+                        @Html.DisplayNameFor(model => khachHang_Info.ten_kh)
+                    </td>
+                    <td class="font-weight-bold text-primary">
+                        @Html.DisplayFor(model => khachHang_Info.ten_kh)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.DisplayNameFor(model => khachHang_Info.gioi_tinh)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => khachHang_Info.gioi_tinh)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.DisplayNameFor(model => khachHang_Info.ngay_sinh)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => khachHang_Info.ngay_sinh)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.DisplayNameFor(model => khachHang_Info.sdt)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => khachHang_Info.sdt)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.DisplayNameFor(model => khachHang_Info.tich_luy)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => khachHang_Info.tich_luy)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.DisplayNameFor(model => khachHang_Info.thoi_gian_tham_gia)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => khachHang_Info.thoi_gian_tham_gia)
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="card-body">
+        <h3 class="display-6">Come and join with us!</h3>
+        <div class="table-responsive">
+            <table class="table table-bordered" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => chiNhanhs.First().ten_chi_nhanh)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => chiNhanhs.First().dia_chi)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => chiNhanhs.First().sdt_cn)
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in chiNhanhs)
+                    {
+                        if (item.ma_chi_nhanh.Trim() != "CNT")
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.ten_chi_nhanh)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.dia_chi)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.sdt_cn)
+                                </td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+        </div>
+    </div>
+</div>

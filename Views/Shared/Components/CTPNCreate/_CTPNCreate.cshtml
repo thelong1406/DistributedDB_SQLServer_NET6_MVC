@@ -1,0 +1,49 @@
+@model btl.Models.ChiTietPhieuNhap
+
+<div class="row justify-content-center">
+    <div class="col-lg-9">
+        <div class="p-5">
+            <div class="text-center">
+                <h1 class="h4 text-gray-900 mb-4">Thêm Chi Tiết Phiếu Nhập</h1>
+            </div>
+            <form class="user" asp-action="CreateCTPN" asp-controller="PhieuNhap">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="so_phieu_nhap" class="control-label"></label>
+                    <input disabled asp-for="so_phieu_nhap" class="form-control form-control-user">
+                    <span asp-validation-for="so_phieu_nhap" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ma_nl_kho" class="control-label"></label>
+                    <input asp-for="ma_nl_kho" class="form-control form-control-user">
+                    <span asp-validation-for="ma_nl_kho" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ma_ncc" class="control-label"></label>
+                    <input disabled asp-for="ma_ncc" class="form-control form-control-user">
+                    <span asp-validation-for="ma_ncc" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ma_nv" class="control-label"></label>
+                    <input disabled asp-for="ma_nv" class="form-control form-control-user">
+                    <span asp-validation-for="ma_nv" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="so_luong" class="control-label"></label>
+                    <input asp-for="so_luong" class="form-control form-control-user">
+                    <span asp-validation-for="so_luong" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="don_gia_nl" class="control-label"></label>
+                    <input asp-for="don_gia_nl" class="form-control form-control-user">
+                    <span asp-validation-for="don_gia_nl" class="text-danger"></span>
+                </div>
+                <hr>
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-primary btn-user btn-block" />
+                </div>
+            </form>
+            <hr>
+        </div>
+    </div>
+</div>

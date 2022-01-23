@@ -1,0 +1,48 @@
+@model btl.Models.HoaDon
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+<hr />
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="text-center">
+            <h1 class="h4 text-gray-900 mb-4">Dich Vu</h1>
+        </div>
+        <form class="user" asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ma_kh" class="control-label"></label>
+                <input asp-for="ma_kh" class="form-control form-control-user">
+                <span asp-validation-for="ma_kh" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ma_khu_vuc" class="control-label"></label>
+                <input asp-for="ma_khu_vuc" class="form-control form-control-user">
+                <span asp-validation-for="ma_khu_vuc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                @* <label asp-for="hinh_thuc_mua" class="control-label"></label>
+                    <input asp-for="hinh_thuc_mua" class="form-control form-control-user">
+                    <span asp-validation-for="hinh_thuc_mua" class="text-danger"></span> *@
+                <label class="control-label">Mua mang về?</label>
+                <input type="checkbox" id="hinh_thuc_mua" name="hinh_thuc_mua" />
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary btn-user btn-block" />
+            </div>
+            <span class="text-danger">@ViewBag.CreateFailed</span>
+            <div>
+                <a asp-action="Index">Back to List</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+@* @section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    } *@

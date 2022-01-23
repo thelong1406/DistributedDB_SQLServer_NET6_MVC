@@ -1,0 +1,70 @@
+@model btl.Models.KhachHang
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+<hr />
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="text-center">
+            <h1 class="h4 text-gray-900 mb-4">Khách Hàng</h1>
+        </div>
+        <form class="user" asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ma_chi_nhanh" class="control-label"></label>
+                <input asp-for="ma_chi_nhanh" class="form-control form-control-user">
+                <span asp-validation-for="ma_chi_nhanh" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ten_kh" class="control-label"></label>
+                <input asp-for="ten_kh" class="form-control form-control-user">
+                <span asp-validation-for="ten_kh" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="sdt" class="control-label"></label>
+                <input asp-for="sdt" class="form-control form-control-user">
+                <span asp-validation-for="sdt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="tich_luy" class="control-label"></label>
+                <input asp-for="tich_luy" class="form-control form-control-user">
+                <span asp-validation-for="tich_luy" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ngay_tham_gia" class="control-label"></label>
+                <input asp-for="ngay_tham_gia" class="form-control form-control-user">
+                <span asp-validation-for="ngay_tham_gia" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="dia_chi" class="control-label"></label>
+                <input asp-for="dia_chi" class="form-control form-control-user">
+                <span asp-validation-for="dia_chi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="gioi_tinh" class="control-label"></label>
+                <input asp-for="gioi_tinh" class="form-control form-control-user">
+                <span asp-validation-for="gioi_tinh" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ngay_sinh" class="control-label"></label>
+                <input asp-for="ngay_sinh" class="form-control form-control-user">
+                <span asp-validation-for="ngay_sinh" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary btn-user btn-block" />
+            </div>
+            <div>
+                <a asp-action="Index">Back to List</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+@* @section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+} *@

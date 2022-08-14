@@ -1,9 +1,9 @@
-# CSDLPT BTL SQL Server .NET 6.0 CORE MVC
+# Distributed Database - Microsoft SQL Server + .NET 6.0 MVC
 ## Bài tập lớn môn Cơ sở dữ liệu phân tán
 
 ## Consisting of two parts: Application & Database
 
-## Required:
+## Requirement:
 * .NET 6.0. Link download: https://dotnet.microsoft.com/en-us/download/dotnet/6.0
 * Dapper. NuGet: ```PM> Install-Package Dapper```
 * SQL Client. NuGet: ```PM> Install-Package Microsoft.Data.SqlClient```
